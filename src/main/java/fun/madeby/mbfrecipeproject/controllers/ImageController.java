@@ -36,7 +36,7 @@ public class ImageController {
     @GetMapping("/recipe/{id}/image")
     public String serveImageUpdateForm(@PathVariable String id, Model model) {
         log.debug("/recipe/{id}/image -->GET");
-        model.addAttribute("recipe", RECIPE_SERVICE.getRecipeCommandById(Long.valueOf(id)));
+        model.addAttribute("recipe", RECIPE_SERVICE.getRecipeCommandById(id));
 
         return "recipe/image-upload-form";
     }
@@ -47,8 +47,7 @@ public class ImageController {
                                             @RequestParam("imagefile") MultipartFile imageFile) {
         log.debug("/recipe/{id}/image -->POST");
 
-        IMAGE_SERVICE.saveImage(imageFile, Long.valueOf(id));
-
+        IMAGE_SERVICE.saveImage(imageFile,  id);
 
         return "redirect:/recipe/" + id + "/image";
     }
@@ -60,7 +59,7 @@ public class ImageController {
         int i = 0;
 
         try {
-            RecipeCommand recipeCommand = RECIPE_SERVICE.getRecipeCommandById(Long.valueOf(id));
+            RecipeCommand recipeCommand = RECIPE_SERVICE.getRecipeCommandById(id);
 
             byte[] byteArray = new byte[recipeCommand.getImage().length];
 

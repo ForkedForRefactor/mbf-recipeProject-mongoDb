@@ -10,8 +10,8 @@ import fun.madeby.mbfrecipeproject.domain.Ingredient;
 
 public interface IngredientService {
 
-    IngredientCommand getIngredientById(Long id);
+    IngredientCommand getIngredientById(String id);
     IngredientCommand saveOrUpdateIngredientCommand(IngredientCommand command);
     Ingredient saveIngredient(Ingredient ingredient);
-    void deleteIngredientById(Long id);
+    void deleteIngredientById(String id);
 }

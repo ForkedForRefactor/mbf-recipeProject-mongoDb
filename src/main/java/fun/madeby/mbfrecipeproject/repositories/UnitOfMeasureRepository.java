@@ -10,7 +10,7 @@ import java.util.Optional;
  * Created by Gra_m on 2022 04 05
  */
 @Repository
-public interface UnitOfMeasureRepository extends CrudRepository<UnitOfMeasure, Long> {
+public interface UnitOfMeasureRepository extends CrudRepository<UnitOfMeasure, String> {
     Optional<UnitOfMeasure> findUnitOfMeasureByDescription(String description);
     Iterable<UnitOfMeasure> findAll();
 

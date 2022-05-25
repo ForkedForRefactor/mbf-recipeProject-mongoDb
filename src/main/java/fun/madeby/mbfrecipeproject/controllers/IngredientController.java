@@ -33,7 +33,7 @@ public class IngredientController {
                                                                 @PathVariable String id){
         log.debug("IC_GET_/recipe/{recipe_id}ingredient/{id}/delete");
 
-        INGREDIENT_SERVICE.deleteIngredientById(Long.valueOf(id));
+        INGREDIENT_SERVICE.deleteIngredientById(id);
 
         return "redirect:/recipe/" + recipe_id + "/ingredients";
     }
@@ -42,7 +42,7 @@ public class IngredientController {
     public String listRecipeIngredients(@PathVariable String id, Model model) {
         log.debug("IC_GET_/recipe/{id}/ingredients");
 
-        model.addAttribute("recipe", RECIPE_SERVICE.getRecipeById(Long.valueOf(id)));
+        model.addAttribute("recipe", RECIPE_SERVICE.getRecipeById(id));
 
         return "recipe/ingredients/list";
     }
@@ -51,7 +51,7 @@ public class IngredientController {
     public String showIngredient(@PathVariable String id, Model model) {
         log.debug("IC_GET_/recipe/ingredients/{id}");
 
-        model.addAttribute("ingredient", INGREDIENT_SERVICE.getIngredientById(Long.valueOf(id)));
+        model.addAttribute("ingredient", INGREDIENT_SERVICE.getIngredientById(id));
 
         return "recipe/ingredients/show";
     }
@@ -60,7 +60,7 @@ public class IngredientController {
     public String updateRecipeIngredient(@PathVariable String id, Model model){
         log.debug("IC_GET_recipe/ingredients/{id}/update");
 
-        IngredientCommand commandMustKnowRecipe = INGREDIENT_SERVICE.getIngredientById(Long.valueOf(id));
+        IngredientCommand commandMustKnowRecipe = INGREDIENT_SERVICE.getIngredientById(id);
         model.addAttribute("ingredient", commandMustKnowRecipe);
 
         model.addAttribute("uomList", UOM_SERVICE.listAllUoms());
@@ -76,7 +76,7 @@ public class IngredientController {
         UnitOfMeasureCommand blankUomCommand = UOM_SERVICE.getOrCreateBlankDescriptionUnitOfMeasureCommand();
 
         IngredientCommand newIngredient = new IngredientCommand();
-        newIngredient.setRecipe_id(Long.valueOf(recipeId));
+        newIngredient.setRecipe_id(recipeId);
         newIngredient.setUom(blankUomCommand);
 
         model.addAttribute("ingredient", newIngredient);
@@ -99,7 +99,7 @@ public class IngredientController {
         }
 
         try {
-            Long commandId = savedCommand.getId();
+            String commandId = savedCommand.getId();
             if(commandId == null)
                 throw new RuntimeException();
         }catch (RuntimeException e) {
@@ -108,7 +108,7 @@ public class IngredientController {
         }
 
         try {
-            Long commandRecipeId = savedCommand.getRecipe_id();
+            String commandRecipeId = savedCommand.getRecipe_id();
             if(commandRecipeId == null)
                 throw new RuntimeException();
         } catch (RuntimeException e) {

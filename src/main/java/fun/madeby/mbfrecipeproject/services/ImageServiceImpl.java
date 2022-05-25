@@ -28,13 +28,13 @@ public class ImageServiceImpl implements ImageService{
     }
 
     @Override
-    public MultipartFile getImageById(Long aLong) {
+    public MultipartFile getImageById(String aString) {
         return null;
     }
 
     @Override
     @Transactional
-    public void saveImage(MultipartFile image, Long id) {
+    public void saveImage(MultipartFile image, String id) {
 
         try {
             Recipe retrievedRecipe = RECIPE_REPOSITORY.findById(id).get();
@@ -57,7 +57,7 @@ public class ImageServiceImpl implements ImageService{
     }
 
     @Override
-    public void deleteImageById(Long id) {
+    public void deleteImageById(String id) {
 
     }
 }

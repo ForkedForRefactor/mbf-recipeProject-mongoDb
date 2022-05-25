@@ -13,7 +13,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @NoArgsConstructor
 public class NoteCommand {
-    private Long id;
+    private String id;
     @NotBlank
     private String recipeNote;
 

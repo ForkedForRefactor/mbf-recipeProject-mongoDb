@@ -44,7 +44,7 @@ public class IngredientServiceImpl implements IngredientService {
 
     @Override
     @Transactional
-    public IngredientCommand getIngredientById(Long id) {
+    public IngredientCommand getIngredientById(String id) {
         Ingredient ingredient = new Ingredient();
 
         Optional<Ingredient> optionalIngredient = INGREDIENT_REPOSITORY.findById(id);
@@ -63,7 +63,7 @@ public class IngredientServiceImpl implements IngredientService {
     }
 
     @Override
-    public void deleteIngredientById(Long id) {
+    public void deleteIngredientById(String id) {
         INGREDIENT_REPOSITORY.deleteById(id);
     }
 
@@ -73,7 +73,7 @@ public class IngredientServiceImpl implements IngredientService {
         Recipe recipe;
         Ingredient ingredientToUpdate;
         Ingredient saveUpdateSuccessful;
-        Long newUpdatedIngredientID = command.getId();
+        String newUpdatedIngredientID = command.getId();
         Recipe retrievedRecipeIsVoid = retrieveAndTestRecipe(command);
         if (retrievedRecipeIsVoid.getId() == null) {
             log.error("Ingredient command is detatched recipe " + command.getRecipe_id() + " cannot be found");
@@ -102,7 +102,7 @@ public class IngredientServiceImpl implements IngredientService {
     }
 
     // region HELPER METHODS
-    Ingredient retrieveIngredient(Recipe savedRecipe, Long ingredientId) {
+    Ingredient retrieveIngredient(Recipe savedRecipe, String ingredientId) {
         Ingredient retrievalFailed = new Ingredient();
         retrievalFailed.setId(null);
 
@@ -126,7 +126,7 @@ public class IngredientServiceImpl implements IngredientService {
         updatingIngredient.setUom(uomExists);
     }
 
-    private UnitOfMeasure retrieveAndTestUnitOfMeasure(Long uomId) {
+    private UnitOfMeasure retrieveAndTestUnitOfMeasure(String uomId) {
         UnitOfMeasure uomNotInDb = new UnitOfMeasure();
         uomNotInDb.setId(null);
 

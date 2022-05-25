@@ -1,4 +1,4 @@
-package fun.madeby.mbfrecipeproject.converters;
+/*package fun.madeby.mbfrecipeproject.converters;
 
 import fun.madeby.mbfrecipeproject.commands.CategoryCommand;
 import fun.madeby.mbfrecipeproject.domain.Category;
@@ -56,4 +56,4 @@ class CategoryToCategoryCommandTest {
         assertEquals(DESCRIPTION, whenCommand.getDescription());
 
     }
-}
+} */

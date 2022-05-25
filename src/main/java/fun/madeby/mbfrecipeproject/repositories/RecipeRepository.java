@@ -10,9 +10,9 @@ import java.util.Optional;
  * Created by Gra_m on 2022 04 05
  */
 @Repository
-public interface RecipeRepository extends CrudRepository<Recipe, Long> {
+public interface RecipeRepository extends CrudRepository<Recipe, String> {
     Optional<Recipe> findRecipeByTitle(String title);
     Iterable<Recipe> findAll();
-    Optional<Recipe> findById(Long aLong);
+    Optional<Recipe> findById(String aLong);
 
 }

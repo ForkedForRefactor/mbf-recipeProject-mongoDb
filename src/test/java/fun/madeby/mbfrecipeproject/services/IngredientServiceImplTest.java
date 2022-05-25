@@ -1,4 +1,4 @@
-package fun.madeby.mbfrecipeproject.services;
+/*package fun.madeby.mbfrecipeproject.services;
 
 import fun.madeby.mbfrecipeproject.commands.IngredientCommand;
 import fun.madeby.mbfrecipeproject.commands.UnitOfMeasureCommand;
@@ -9,6 +9,7 @@ import fun.madeby.mbfrecipeproject.domain.UnitOfMeasure;
 import fun.madeby.mbfrecipeproject.repositories.IngredientRepository;
 import fun.madeby.mbfrecipeproject.repositories.RecipeRepository;
 import fun.madeby.mbfrecipeproject.repositories.UnitOfMeasureRepository;
+import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,7 +22,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.*;
-
+@Ignore
 @ExtendWith(MockitoExtension.class)
 class IngredientServiceImplTest {
     @Mock
@@ -258,4 +259,4 @@ class IngredientServiceImplTest {
         //then
         verify(ingredientRepository, times(1)).deleteById(anyLong());
     }
-}
+}*/

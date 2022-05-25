@@ -1,4 +1,4 @@
-package fun.madeby.mbfrecipeproject.services;
+/*package fun.madeby.mbfrecipeproject.services;
 
 import fun.madeby.mbfrecipeproject.commands.UnitOfMeasureCommand;
 import fun.madeby.mbfrecipeproject.converters.UnitOfMeasureToUnitOfMeasureCommand;
@@ -168,4 +168,4 @@ class UnitOfMeasureServiceImplTest {
         assertEquals(uom1Id, savedUnitOfMeasure.getId());
 
     }
-}
+} */

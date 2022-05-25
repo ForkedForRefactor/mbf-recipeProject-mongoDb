@@ -1,6 +1,7 @@
 package fun.madeby.mbfrecipeproject.bootstrap;
 
 import fun.madeby.mbfrecipeproject.domain.*;
+import fun.madeby.mbfrecipeproject.repositories.UnitOfMeasureRepository;
 import fun.madeby.mbfrecipeproject.services.CategoryServiceImpl;
 import fun.madeby.mbfrecipeproject.services.RecipeServiceImpl;
 import fun.madeby.mbfrecipeproject.services.UnitOfMeasureServiceImpl;
@@ -29,13 +30,17 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
     private final CategoryServiceImpl CATEGORY_SERVICE;
     private final RecipeServiceImpl RECIPE_SERVICE;
 
+    private UnitOfMeasureRepository unitOfMeasureRepository;
+
     public DataLoader(
             UnitOfMeasureServiceImpl unitOfMeasureServiceImpl,
             CategoryServiceImpl category_service,
-            RecipeServiceImpl recipe_service) {
+            RecipeServiceImpl recipe_service,
+            UnitOfMeasureRepository unit_of_measure_repository) {
         UNIT_OF_MEASURE_SERVICE_IMPL = unitOfMeasureServiceImpl;
         CATEGORY_SERVICE = category_service;
         RECIPE_SERVICE = recipe_service;
+        unitOfMeasureRepository = unit_of_measure_repository;
     }
 
     @Override
@@ -54,6 +59,7 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
 
     private List<Recipe> BootstrapData() {
+        loadUom();
         //GUACOMOLE Original
         Recipe recipe = new Recipe();
         System.out.println("Reassuring message.. Bootstrapping. Prepare for imminent fail..ur..");
@@ -343,5 +349,40 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
                 "Press a piece of plastic wrap against the surface of the guacamole and cover your bowl with a lid. Refrigerate the guacamole for at least 15 minutes to allow the flavors of the chiles and the cumin to meld and deepen.\n" +
                 "\n" +
                 "Enjoy the guacamole within 3 days. Store leftovers covered in the refrigerator. If the guacamole browns, scrape off the brown layer and discard before serving.";
+    }
+
+
+    private void loadUom(){
+        UnitOfMeasure uom1 = new UnitOfMeasure();
+        uom1.setDescription("teaspoon");
+        unitOfMeasureRepository.save(uom1);
+
+        UnitOfMeasure uom2 = new UnitOfMeasure();
+        uom2.setDescription("tablespoon");
+        unitOfMeasureRepository.save(uom2);
+
+        UnitOfMeasure uom3 = new UnitOfMeasure();
+        uom3.setDescription("cup");
+        unitOfMeasureRepository.save(uom3);
+
+        UnitOfMeasure uom4 = new UnitOfMeasure();
+        uom4.setDescription("pinch");
+        unitOfMeasureRepository.save(uom4);
+
+        UnitOfMeasure uom5 = new UnitOfMeasure();
+        uom5.setDescription("ounce");
+        unitOfMeasureRepository.save(uom5);
+
+        UnitOfMeasure uom6 = new UnitOfMeasure();
+        uom6.setDescription("each");
+        unitOfMeasureRepository.save(uom6);
+
+        UnitOfMeasure uom7 = new UnitOfMeasure();
+        uom7.setDescription("pint");
+        unitOfMeasureRepository.save(uom7);
+
+        UnitOfMeasure uom8 = new UnitOfMeasure();
+        uom8.setDescription("dash");
+        unitOfMeasureRepository.save(uom8);
     }
 }

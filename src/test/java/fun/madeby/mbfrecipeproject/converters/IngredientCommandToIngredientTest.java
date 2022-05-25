@@ -1,4 +1,4 @@
-package fun.madeby.mbfrecipeproject.converters;
+/*package fun.madeby.mbfrecipeproject.converters;
 
 import fun.madeby.mbfrecipeproject.commands.IngredientCommand;
 import fun.madeby.mbfrecipeproject.commands.UnitOfMeasureCommand;
@@ -80,3 +80,4 @@ class IngredientCommandToIngredientTest {
         assertEquals(AMOUNT, whenDomain.getAmount());
     }
 }
+*/

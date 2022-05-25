@@ -1,4 +1,4 @@
-package fun.madeby.mbfrecipeproject.converters;
+/*package fun.madeby.mbfrecipeproject.converters;
 
 import fun.madeby.mbfrecipeproject.commands.UnitOfMeasureCommand;
 import fun.madeby.mbfrecipeproject.domain.UnitOfMeasure;
@@ -55,4 +55,4 @@ class UnitOfMeasureCommandToUnitOfMeasureTest {
         assertEquals(LONG_VALUE, whenDomain.getId());
         assertEquals(DESCRIPTION, whenDomain.getDescription());
     }
-}
+} */

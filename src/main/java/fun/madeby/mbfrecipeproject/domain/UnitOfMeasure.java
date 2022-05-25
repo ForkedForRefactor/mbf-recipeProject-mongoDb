@@ -1,19 +1,19 @@
 package fun.madeby.mbfrecipeproject.domain;
 
 import lombok.*;
-
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by Gra_m on 2022 04 04
  */
-@Data
-@Entity
+@Getter
+@Setter
+@Document
 public class UnitOfMeasure {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private String description;
 
 }

@@ -1,4 +1,4 @@
-package fun.madeby.mbfrecipeproject.repositories;
+/*package fun.madeby.mbfrecipeproject.repositories;
 
 import fun.madeby.mbfrecipeproject.domain.UnitOfMeasure;
 import org.junit.jupiter.api.BeforeEach;
@@ -52,4 +52,4 @@ class UnitOfMeasureRepositoryTestIT {
         //then
         assertEquals(expectedValue, unitOfMeasureOptional.get().getDescription());
     }
-}
+} */

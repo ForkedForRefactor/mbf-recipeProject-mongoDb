@@ -12,9 +12,9 @@ import java.util.Set;
 public interface RecipeService {
 
     Set<Recipe> getRecipes();
-    Recipe getRecipeById(Long aLong);
-    RecipeCommand getRecipeCommandById(Long aLong);
+    Recipe getRecipeById(String aString);
+    RecipeCommand getRecipeCommandById(String aString);
     RecipeCommand saveRecipeCommand(RecipeCommand recipeCommand);
-    void deleteRecipeById(Long aLong);
+    void deleteRecipeById(String aString);
 
 }

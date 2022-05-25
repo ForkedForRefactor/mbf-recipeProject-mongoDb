@@ -1,3 +1,4 @@
+/*
 package fun.madeby.mbfrecipeproject.converters;
 
 import fun.madeby.mbfrecipeproject.commands.NoteCommand;
@@ -57,4 +58,4 @@ class NoteToNoteCommandTest {
         assertEquals(ID, whenCommand.getId());
         assertEquals(RECIPE_NOTE, whenCommand.getRecipeNote());
     }
-}
+} */

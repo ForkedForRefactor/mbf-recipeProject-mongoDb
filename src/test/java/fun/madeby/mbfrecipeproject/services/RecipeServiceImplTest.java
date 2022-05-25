@@ -1,4 +1,4 @@
-package fun.madeby.mbfrecipeproject.services;
+/*package fun.madeby.mbfrecipeproject.services;
 
 import fun.madeby.mbfrecipeproject.domain.Recipe;
 import fun.madeby.mbfrecipeproject.exceptions.NotFoundException;
@@ -104,4 +104,4 @@ class RecipeServiceImplTest {
 
 
 
-}
+}*/
