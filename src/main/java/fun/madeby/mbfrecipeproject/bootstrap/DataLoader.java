@@ -46,20 +46,11 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
     @Override
     @Transactional
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        log.debug("onApplicationEvent: ContextRefreshedEvent Triggered");
-        List<UnitOfMeasure> uOMSet = (List<UnitOfMeasure>) UNIT_OF_MEASURE_SERVICE_IMPL.getAllUomsAsIterable();
-        try {
-            if (uOMSet.size() == 0)
-                throw new RuntimeException("data.sql has not initialised");
-            RECIPE_SERVICE.saveAll(BootstrapData());
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-        }
+        loadUom();
     }
 
 
     private List<Recipe> BootstrapData() {
-        loadUom();
         //GUACOMOLE Original
         Recipe recipe = new Recipe();
         System.out.println("Reassuring message.. Bootstrapping. Prepare for imminent fail..ur..");
